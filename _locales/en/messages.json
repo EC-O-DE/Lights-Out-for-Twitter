@@ -1,0 +1,26 @@
+{
+	"extName": {
+		"message": "Lights Out for Twitter",
+		"description": "Extension name"
+	},
+	"extDescription": {
+		"message": "Automatically activates and deactivates Twitter's Night Mode",
+		"description": "Extension description"
+	},
+	"optionsSetHoursTurnOn": {
+		"message": "Turn on",
+		"description": "Time to turn on"
+	},
+	"optionsSetHoursTurnOff": {
+		"message": "Turn off",
+		"description": "Time to turn off"
+	},
+	"optionsSave": {
+		"message": "Save",
+		"description": "Save button"
+	},
+	"optionsSavedMessage": {
+		"message": "Options saved.",
+		"description": "Saved options notification"
+	}
+}

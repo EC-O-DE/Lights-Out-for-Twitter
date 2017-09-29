@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+	<head>
+		<link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
+		<link rel='stylesheet' href='mdl/material.min.css'>
+		<script defer src='mdl/material.min.js'></script>
+	</head>
+	<body>
+		<div class='mdl-textfield mdl-js-textfield mdl-textfield--floating-label is-dirty'>
+			<input class='mdl-textfield__input' type='time' id='setHours-turnOn'>
+			<label class='mdl-textfield__label' for='setHours-turnOn'>Turn on</label>
+		</div>
+		<div class='mdl-textfield mdl-js-textfield mdl-textfield--floating-label is-dirty'>
+			<input class='mdl-textfield__input' type='time' id='setHours-turnOff'>
+			<label class='mdl-textfield__label' for='setHours-turnOff'>Turn off</label>
+		</div>
+
+		<button class='mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect' id='saveButton'>Save</button>
+		<div class='mdl-js-snackbar mdl-snackbar' id='snackbar'>
+			<div class='mdl-snackbar__text'></div>
+			<button class='mdl-snackbar__action' type='button'></button>
+		</div>
+
+		<script src='options.js'></script>
+	</body>
+</html>
