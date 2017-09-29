@@ -1,26 +1,33 @@
 <!doctype html>
 <html>
-	<head>
-		<link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
-		<link rel='stylesheet' href='mdl/material.min.css'>
-		<script defer src='mdl/material.min.js'></script>
-	</head>
-	<body>
-		<div class='mdl-textfield mdl-js-textfield mdl-textfield--floating-label is-dirty'>
-			<input class='mdl-textfield__input' type='time' id='setHours-turnOn'>
-			<label class='mdl-textfield__label' for='setHours-turnOn'>Turn on</label>
+<head>
+	<link rel='stylesheet' href='node_modules/material-components-web/dist/material-components-web.min.css'>
+</head>
+<body>
+	<div>
+		<div class='mdc-form-field'>
+			<div class='mdc-textfield mdc-textfield--upgraded'>
+				<input class='mdc-textfield__input' type='time' id='static-turnOn'>
+				<label class='mdc-textfield__label mdc-textfield__label--float-above' for='static-turnOn'>Turn on</label>
+			</div>
 		</div>
-		<div class='mdl-textfield mdl-js-textfield mdl-textfield--floating-label is-dirty'>
-			<input class='mdl-textfield__input' type='time' id='setHours-turnOff'>
-			<label class='mdl-textfield__label' for='setHours-turnOff'>Turn off</label>
+		<div class='mdc-form-field'>
+			<div class='mdc-textfield mdc-textfield--upgraded'>
+				<input class='mdc-textfield__input' type='time' id='static-turnOff'>
+				<label class='mdc-textfield__label mdc-textfield__label--float-above' for='static-turnOff'>Turn off</label>
+			</div>
 		</div>
+	</div>
 
-		<button class='mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect' id='saveButton'>Save</button>
-		<div class='mdl-js-snackbar mdl-snackbar' id='snackbar'>
-			<div class='mdl-snackbar__text'></div>
-			<button class='mdl-snackbar__action' type='button'></button>
+	<button class='mdc-button mdc-button--primary' data-mdc-auto-init='MDCRipple' id='saveButton'>Save</button>
+	<div class='mdc-snackbar' aria-live='assertive' aria-atomic='true' aria-hidden='true'>
+		<div class='mdc-snackbar__text'></div>
+		<div class='mdc-snackbar__action-wrapper'>
+			<button class='mdc-button mdc-snackbar__action-button' type='button'></button>
 		</div>
+	</div>
 
-		<script src='options.js'></script>
-	</body>
+	<script src='node_modules/material-components-web/dist/material-components-web.min.js'></script>
+	<script src='options.js'></script>
+</body>
 </html>
