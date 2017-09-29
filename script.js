@@ -7,7 +7,7 @@ chrome.storage.sync.get({
 	turnOn = items.setHours_turnOn;
 	turnOff = items.setHours_turnOff;
 	checkTime();
-	setInterval(checkTime, 1 * 3 * 1000);
+	setInterval(checkTime, 2 * 60 * 1000);
 });
 chrome.storage.onChanged.addListener(function(changes) {
 	for (key in changes) {
