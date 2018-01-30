@@ -1,4 +1,5 @@
 /**
+ * @license
  * Copyright 2017 Google Inc. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -30,11 +31,12 @@
  * Implement this adapter for your framework of choice to delegate updates to
  * the component in your framework of choice. See architecture documentation
  * for more details.
- * https://github.com/material-components/material-components-web/blob/master/docs/architecture.md
+ * https://github.com/material-components/material-components-web/blob/master/docs/code/architecture.md
  *
  * @record
  */
-export default class MDCIconToggleAdapter {
+
+class MDCIconToggleAdapter {
   /** @param {string} className */
   addClass(className) {}
 
@@ -86,4 +88,6 @@ export default class MDCIconToggleAdapter {
  *   isOn: boolean,
  * }}
  */
-export let IconToggleEvent;
+let IconToggleEvent;
+
+export {MDCIconToggleAdapter, IconToggleEvent};

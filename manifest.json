@@ -1,7 +1,7 @@
 {
 	"manifest_version": 2,
 	"name": "__MSG_extName__",
-	"version": "0.1.0",
+	"version": "0.2.0",
 	"author": "Bennett Blodinger",
 	"default_locale": "en",
 	"description": "__MSG_extDescription__",
@@ -29,15 +29,15 @@
 				"https://twitter.com/*/privacy"
 			],
 			"js": [
-				"moment.min.js",
+				"node_modules/moment/min/moment.min.js",
+				"node_modules/js-cookie/src/js.cookie.js",
 				"script.js"
 			]
 		}
 	],
 	"homepage_url": "https://github.com/benwa/Lights-Out-for-Twitter",
 	"options_ui": {
-		"page": "options.html",
-		"chrome_style": true
+		"page": "options.html"
 	},
 	"permissions": [ "storage" ],
 	"minimum_chrome_version": "40"

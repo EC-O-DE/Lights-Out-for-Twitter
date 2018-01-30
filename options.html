@@ -2,24 +2,27 @@
 <html>
 <head>
 	<link rel='stylesheet' href='node_modules/material-components-web/dist/material-components-web.min.css'>
+	<link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500' rel='stylesheet'>
 </head>
 <body>
 	<div>
 		<div class='mdc-form-field'>
-			<div class='mdc-textfield mdc-textfield--upgraded'>
-				<input class='mdc-textfield__input' type='time' id='static-turnOn'>
-				<label class='mdc-textfield__label mdc-textfield__label--float-above' for='static-turnOn'>Turn on</label>
+			<div class='mdc-text-field mdc-text-field--upgraded'>
+				<input class='mdc-text-field__input' type='time' id='static-turnOn'>
+				<label class='mdc-text-field__label mdc-text-field__label--float-above' for='static-turnOn'>Turn on</label>
+				<div class="mdc-text-field__bottom-line"></div>
 			</div>
 		</div>
 		<div class='mdc-form-field'>
-			<div class='mdc-textfield mdc-textfield--upgraded'>
-				<input class='mdc-textfield__input' type='time' id='static-turnOff'>
-				<label class='mdc-textfield__label mdc-textfield__label--float-above' for='static-turnOff'>Turn off</label>
+			<div class='mdc-text-field mdc-text-field--upgraded'>
+				<input class='mdc-text-field__input' type='time' id='static-turnOff'>
+				<label class='mdc-text-field__label mdc-text-field__label--float-above' for='static-turnOff'>Turn off</label>
+				<div class="mdc-text-field__bottom-line"></div>
 			</div>
 		</div>
 	</div>
 
-	<button class='mdc-button mdc-button--primary' data-mdc-auto-init='MDCRipple' id='saveButton'>Save</button>
+	<button class='mdc-button mdc-button--raised ' data-mdc-auto-init='MDCRipple' id='saveButton'>Save</button>
 	<div class='mdc-snackbar' aria-live='assertive' aria-atomic='true' aria-hidden='true'>
 		<div class='mdc-snackbar__text'></div>
 		<div class='mdc-snackbar__action-wrapper'>

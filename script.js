@@ -1,5 +1,7 @@
-var turnOn = '';
-var turnOff = '';
+'use strict';
+
+let turnOn = '';
+let turnOff = '';
 chrome.storage.sync.get({
 	setHours_turnOn: '19:30',
 	setHours_turnOff: '07:30'
@@ -7,35 +9,47 @@ chrome.storage.sync.get({
 	turnOn = items.setHours_turnOn;
 	turnOff = items.setHours_turnOff;
 	checkTime();
-	setInterval(checkTime, 2 * 60 * 1000);
+	setInterval(checkTime, 1 * 60 * 1000);
 });
 chrome.storage.onChanged.addListener(function(changes) {
-	for (key in changes) {
+	for (let key in changes) {
 		switch (key) {
 			case 'setHours_turnOn':
 				turnOn = changes[key].newValue;
+				break;
 			case 'setHours_turnOff':
 				turnOff = changes[key].newValue;
+				break;
 		}
 	}
 });
 
-function toggleNightMode() {
-	document.getElementsByClassName('nightmode-toggle')[0].click();
+const nightMode = {
+	get() {
+		return (Cookies.get('night_mode') == undefined ? false : true);
+	},
+	set(opts) {
+		switch(opts) {
+			case 'on': {
+				Cookies.set('night_mode', 1, {domain: '.twitter.com'});
+				break;
+			}
+			case 'off': {
+				Cookies.remove('night_mode', {domain: '.twitter.com'});
+				break;
+			}
+		}
+	}
 }
 
 function checkTime() {
-	console.log(turnOn, turnOff);
-	var time = moment();
-	var current = Object.values(document.getElementsByClassName('js-nightmode-icon')[0].classList).indexOf('Icon--crescentFilled');
-	moment_turnOn = moment(turnOn, 'HH:mm').set({'y': time.get('y'), 'M': time.get('M'), 'D': time.get('D')});
-	moment_turnOff = moment(turnOff, 'HH:mm').set({'y': time.get('y'), 'M': time.get('M'), 'D': time.get('D')});
+	let time = moment();
+	let moment_turnOn = moment(turnOn, 'HH:mm').set({'y': time.get('y'), 'M': time.get('M'), 'D': time.get('D')});;
+	let moment_turnOff = moment(turnOff, 'HH:mm').set({'y': time.get('y'), 'M': time.get('M'), 'D': time.get('D')});;
 
-	if (time.isBetween(moment_turnOn, moment_turnOff, 'hour', '[]')) {
-		if (current == -1)
-			toggleNightMode();
+	if (time.isBetween(moment_turnOn, moment(moment_turnOn).endOf('day')) || time.isBetween(moment(moment_turnOff).startOf('day'), moment_turnOff)) {
+		if (!nightMode.get()) nightMode.set('on');
 	} else {
-		if (current > -1)
-			toggleNightMode();
+		if (nightMode.get()) nightMode.set('off');
 	}
 }
