@@ -1,0 +1,18 @@
+{
+  "name": "lights-out-for-twitter",
+  "version": "0.2.1",
+  "description": "Automatically activates and deactivates Twitter's Night Mode",
+  "main": "script.js",
+  "dependencies": {
+    "js-cookie": "^2.2.0",
+    "moment": "^2.20.1",
+    "material-components-web": "^0.28.0"
+  },
+  "repository": "github:benwa/Lights-Out-for-Twitter",
+  "author": "Bennett Blodinger <bennett.blodinger@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/benwa/Lights-Out-for-Twitter/issues"
+  },
+  "homepage": "https://github.com/benwa/Lights-Out-for-Twitter#readme"
+}
